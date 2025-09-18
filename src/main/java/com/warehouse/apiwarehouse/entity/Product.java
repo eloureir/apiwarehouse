@@ -20,6 +20,48 @@ public class Product {
     private String name;
 
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "product")
     private Set<Shipment> shipments = new HashSet<>();
+
+    public Product(UUID id, String sku, String name) {
+        this.id = id;
+        this.sku = sku;
+        this.name = name;
+    }
+
+    public Product() {
+
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Shipment> getShipments() {
+        return shipments;
+    }
+
+    public void setShipments(Set<Shipment> shipments) {
+        this.shipments = shipments;
+    }
 }

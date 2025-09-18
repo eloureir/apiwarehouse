@@ -19,10 +19,33 @@ public class Shipment {
 
     @ManyToMany
     @JoinTable(
-            name = "shipment_products",
+            name = "shipment_product",
             joinColumns = @JoinColumn(name = "shipment_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private Set<Product> products = new HashSet<>();
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
 }
