@@ -18,20 +18,27 @@ public class ShipmentController {
     public ShipmentCreateDTO findById(@PathVariable("id") UUID id) {
         return service.findById(id);
     }
+
     @GetMapping
     public List<ShipmentCreateDTO> findAll() {
         return service.findAll();
     }
+
     @PostMapping
     public ShipmentCreateDTO save(
             @RequestBody ShipmentCreateDTO shipmentCreateDTO) {
         return service.save(shipmentCreateDTO);
     }
+
     @PutMapping("/{id}")
     public ShipmentCreateDTO update(
-            @PathVariable("id")UUID id,
+            @PathVariable("id") UUID id,
             @RequestBody ShipmentCreateDTO shipmentCreateDTO) {
         return service.update(id, shipmentCreateDTO);
     }
+
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id")UUID id) { service.deleteById(id);}
+    public void deleteById(@PathVariable UUID id) {
+        service.deleteById(id);
+    }
+}

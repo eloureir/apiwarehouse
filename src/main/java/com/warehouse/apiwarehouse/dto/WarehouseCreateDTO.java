@@ -1,5 +1,7 @@
 package com.warehouse.apiwarehouse.dto;
 
+import java.util.UUID;
+
 public class WarehouseCreateDTO {
     private String name;
 
